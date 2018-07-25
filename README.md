@@ -1,24 +1,14 @@
-# README
+# Nous sommes le groupe de THP-Nantes : Bertyn, Mohamed, Lionel, Nicolas et Florian
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Voici la base de donnée sur MOOCademy.
 
-Things you may want to cover:
+Elle est composée de 2 tables :
 
-* Ruby version
+- cours qui représente les cours avec un attribut titre et une description
 
-* System dependencies
+- lecons pour les leçons avec un titre et un body
 
-* Configuration
+Chaque cours possède plusieurs leçons.
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Vous pouvez vérifier les tables créées avec 10 lignes pour chaque dans db/development.sqlite3
