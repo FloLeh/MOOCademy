@@ -1,38 +1,264 @@
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  ↳ bin/rails:9
-  [1m[35m (116.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  ↳ bin/rails:9
-  [1m[35m (112.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  ↳ bin/rails:9
+  ↳ bin/rails:4
+  [1m[35m (114.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (118.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateCours (20180725192801)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "cours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "titre" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725192801_create_cours.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725192801"]]
+  ↳ bin/rails:4
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cour_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cour_id" ON "lecons" ("cour_id")[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (116.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 19:42:31.844107"], ["updated_at", "2018-07-25 19:42:31.844107"]]
+  ↳ bin/rails:4
+  [1m[35m (64.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-Migrating to CreateCourses (20180725193751)
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  ↳ db/migrate/20180725193751_create_courses.rb:3
-  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193751"]]
-  ↳ bin/rails:9
-  [1m[35m (124.9ms)[0m  [1m[36mcommit transaction[0m
-  ↳ bin/rails:9
-Migrating to CreateLessons (20180725193801)
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "lecons"[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (83.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "lessons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  ↳ db/migrate/20180725193801_create_lessons.rb:3
-  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_lessons_on_course_id" ON "lessons" ("course_id")[0m
-  ↳ db/migrate/20180725193801_create_lessons.rb:3
-  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193801"]]
-  ↳ bin/rails:9
-  [1m[35m (129.0ms)[0m  [1m[36mcommit transaction[0m
-  ↳ bin/rails:9
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cour_id" integer, "titre" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cour_id" ON "lecons" ("cour_id")[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
+  ↳ bin/rails:4
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 19:41:12.218408"], ["updated_at", "2018-07-25 19:41:12.218408"]]
-  ↳ bin/rails:9
-  [1m[35m (86.3ms)[0m  [1m[36mcommit transaction[0m
-  ↳ bin/rails:9
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "lecons"[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cour_id" integer, "titre" varchar, "description" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cour_id" ON "lecons" ("cour_id")[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (102.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "lecons"[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLecons (20180725193506)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cour_id" integer, "titre" varchar, "body" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cour_id" ON "lecons" ("cour_id")[0m
+  ↳ db/migrate/20180725193506_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725193506"]]
+  ↳ bin/rails:4
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Ashford of Ashford"], ["description", "A lion doesn't concern itself with the opinion of sheep."], ["created_at", "2018-07-25 20:07:45.351420"], ["updated_at", "2018-07-25 20:07:45.351420"]]
+  [1m[35m (73.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (2.0ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Lonmouth"], ["description", "Hodor? Hodor."], ["created_at", "2018-07-25 20:09:34.369833"], ["updated_at", "2018-07-25 20:09:34.369833"]]
+  [1m[35m (75.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Spicer of Castamere"], ["description", "Every flight begins with a fall."], ["created_at", "2018-07-25 20:09:34.451786"], ["updated_at", "2018-07-25 20:09:34.451786"]]
+  [1m[35m (73.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.3ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Ryswell of the Rills"], ["description", "Do the dead frighten you?"], ["created_at", "2018-07-25 20:09:34.529948"], ["updated_at", "2018-07-25 20:09:34.529948"]]
+  [1m[35m (50.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Hoare of Orkmont"], ["description", "Hodor? Hodor."], ["created_at", "2018-07-25 20:09:34.585539"], ["updated_at", "2018-07-25 20:09:34.585539"]]
+  [1m[35m (95.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Roxton of the Ring"], ["description", "When you play a game of thrones you win or you die."], ["created_at", "2018-07-25 20:09:34.685694"], ["updated_at", "2018-07-25 20:09:34.685694"]]
+  [1m[35m (72.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Gardener of Highgarden"], ["description", "Laughter is poison to fear."], ["created_at", "2018-07-25 20:09:34.763150"], ["updated_at", "2018-07-25 20:09:34.763150"]]
+  [1m[35m (64.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.3ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Orkwood of Orkmont"], ["description", "There are no heroes...in life, the monsters win."], ["created_at", "2018-07-25 20:09:34.830694"], ["updated_at", "2018-07-25 20:09:34.830694"]]
+  [1m[35m (84.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Grafton of Gulltown"], ["description", "Winter is coming."], ["created_at", "2018-07-25 20:09:34.918427"], ["updated_at", "2018-07-25 20:09:34.918427"]]
+  [1m[35m (62.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Baratheon of King's Landing"], ["description", "Laughter is poison to fear."], ["created_at", "2018-07-25 20:09:34.985381"], ["updated_at", "2018-07-25 20:09:34.985381"]]
+  [1m[35m (84.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Create (0.4ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "Norrey"], ["description", "Power is a curious thing. Who lives, Who dies. Power resides where men believe it resides. It is a trick, A shadow on the wall."], ["created_at", "2018-07-25 20:09:35.074410"], ["updated_at", "2018-07-25 20:09:35.074410"]]
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.2ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLecon Create (2.1ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 3], ["titre", "Kyle Condon"], ["body", "Lannisport"], ["created_at", "2018-07-25 20:11:31.585286"], ["updated_at", "2018-07-25 20:11:31.585286"]]
+  [1m[35m (65.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.3ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.6ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 1], ["titre", "Borroq"], ["body", "Lorath"], ["created_at", "2018-07-25 20:11:31.660329"], ["updated_at", "2018-07-25 20:11:31.660329"]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.2ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.3ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 6], ["titre", "Chiggen"], ["body", "Old Valyria"], ["created_at", "2018-07-25 20:11:31.747141"], ["updated_at", "2018-07-25 20:11:31.747141"]]
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.1ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.4ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 6], ["titre", "Hunnimore"], ["body", "Vaes Dothrak"], ["created_at", "2018-07-25 20:11:31.813042"], ["updated_at", "2018-07-25 20:11:31.813042"]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.3ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.5ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 1], ["titre", "Rhaenys Targaryen"], ["body", "Sunspear"], ["created_at", "2018-07-25 20:11:31.914910"], ["updated_at", "2018-07-25 20:11:31.914910"]]
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.2ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.5ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 3], ["titre", "Poul Pemford"], ["body", "Chroyane"], ["created_at", "2018-07-25 20:11:32.014389"], ["updated_at", "2018-07-25 20:11:32.014389"]]
+  [1m[35m (81.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.2ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.3ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 3], ["titre", "Artys Arryn"], ["body", "Oros"], ["created_at", "2018-07-25 20:11:32.102332"], ["updated_at", "2018-07-25 20:11:32.102332"]]
+  [1m[35m (39.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.1ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.3ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 3], ["titre", "Valaena Velaryon"], ["body", "White Harbor"], ["created_at", "2018-07-25 20:11:32.146043"], ["updated_at", "2018-07-25 20:11:32.146043"]]
+  [1m[35m (51.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.1ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.4ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 4], ["titre", "Hamish the Harper"], ["body", "Norvos"], ["created_at", "2018-07-25 20:11:32.202116"], ["updated_at", "2018-07-25 20:11:32.202116"]]
+  [1m[35m (51.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCour Load (0.1ms)[0m  [1m[34mSELECT  "cours".* FROM "cours" WHERE "cours"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mLecon Create (0.3ms)[0m  [1m[32mINSERT INTO "lecons" ("cour_id", "titre", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cour_id", 8], ["titre", "Clarent Crakehall"], ["body", "New Ghis"], ["created_at", "2018-07-25 20:11:32.257561"], ["updated_at", "2018-07-25 20:11:32.257561"]]
+  [1m[35m (95.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLecon Load (0.4ms)[0m  [1m[34mSELECT  "lecons".* FROM "lecons" WHERE "lecons"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
